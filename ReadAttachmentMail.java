@@ -14,31 +14,12 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeBodyPart;
 
-/**
- * This program demonstrates how to download e-mail messages and save
- * attachments into files on disk.
- *
- * @author www.codejava.net
- *
- */
 public class ReadAttachmentMail {
     private String saveDirectory;
 
-    /**
-     * Sets the directory where attached files will be stored.
-     * @param dir absolute path of the directory
-     */
     public void setSaveDirectory(String dir) {
         this.saveDirectory = dir;
     }
-
-    /**
-     * Downloads new messages and saves attachments to disk if any.
-     * @param host
-     * @param port
-     * @param userName
-     * @param password
-     */
     public void downloadEmailAttachments(String host, String port,
                                          String userName, String password) {
         Properties properties = new Properties();
@@ -109,7 +90,6 @@ public class ReadAttachmentMail {
                     }
                 }
 
-                // print out details of each message
                 System.out.println("Message #" + (i + 1) + ":");
                 System.out.println("\t From: " + from);
                 System.out.println("\t Subject: " + subject);
@@ -132,16 +112,13 @@ public class ReadAttachmentMail {
         }
     }
 
-    /**
-     * Runs this program with Gmail POP3 server
-     */
     public static void main(String[] args) {
         String host = "pop.gmail.com";
         String port = "995";
-        String userName = "ramcolinho6565@gmail.com";
-        String password = "RY091105";
+        String userName = "";
+        String password = "";
 
-        String saveDirectory = "/home/ramazan/Attachment";
+        String saveDirectory = "/home/ramazan/Attachment"; //path for download attachment files.
 
         ReadAttachmentMail receiver = new ReadAttachmentMail();
         receiver.setSaveDirectory(saveDirectory);
